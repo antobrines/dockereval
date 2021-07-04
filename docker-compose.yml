@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  dockereval:
+    image: dockereval
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes: 
+      - ./config/apache.conf:/etc/apache2/sites-available/apache.conf
+      - ./config/script.sh:/script.sh
+      - ./joomla-logs/apache/:/var/log/apache2/
+    ports:
+      - 8000:80
+  mysql:
+      image: mysql:5.7.22
+      environment:
+        MYSQL_ROOT_PASSWORD: example
+        MYSQL_DATABASE: example
+        MYSQL_USER: example
+        MYSQL_PASSWORD: example
+      ports:
+        - 8001:3306
+      volumes:
+        - ./mysql:/var/lib/mysql
+        - ./config/scriptSql.sh:/scriptSql.sh
+        
+  

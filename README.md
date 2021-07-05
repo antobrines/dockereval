@@ -39,12 +39,13 @@ docker exec -it dockereval_dockereval_1 rm /var/www/html/joomla/installation/_Jo
 
 - dockereval_dockereval_1 : Nom du container
 - _JoomlaQwrO2TjhqyFA93V0LgOwy.txt : Nom de fichier à supprimer (qui est different à chaque fois)
+- /var/www/html/joomla/ : Chemin de l'installation du serveur
     
 ## Logs
 
 Les logs sont présent dans le dossier joomla-logs :
 - Log apache dans le dossier apache
-- Log mysql dans le dossier mysql (....)
+- Log mysql dans le dossier mysql (2 differente façon)
 
   
 ## Auteurs

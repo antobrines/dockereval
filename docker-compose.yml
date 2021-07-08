@@ -14,7 +14,7 @@ services:
       - 8000:80
   mysql:
       image: mysql:5.7.22
-      command: bash -c "chmod -R 7777 /var/log && chmod 0444 /etc/mysql/my.cnf && service mysql restart && tail -f"
+      command: bash -c "chmod -R 777 /var/log && chmod 0444 /etc/mysql/my.cnf && service mysql restart && tail -f"
       #command: bash -c "mysqld --user=root --general-log=1 --general-log-file=/var/log/mysql/general-log.log && chmod -R 777 /var/log/mysql/"
       environment:
         MYSQL_ROOT_PASSWORD: example
